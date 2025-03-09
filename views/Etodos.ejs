@@ -1,0 +1,34 @@
+<%- include('partials/head') %>
+
+    <title>Editing a Todo</title>
+    <style>
+        .center {
+            margin: auto;
+            width: 35%;
+            padding: 10px;
+        }
+
+        #hello {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1 class="text-center mb-5">Update your Todo</h1>
+        <h5 class="m-5">
+            Comment No : You know yourself
+        </h5>
+        <div class="center">
+            <form action="/todos/<%= id %>?_method=PATCH" method = "POST">
+                <textarea name="text" id="hello" rows="6" , cols="30"><%= txt %>
+            
+                </textarea>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </body>
+
+    </html>
+    <%- include('partials/footer') %>

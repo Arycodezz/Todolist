@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+    <title>Create your todo</title>
+    <style>
+        #center{
+            margin: auto;
+            padding: 10px;
+            width: 35%;
+        }
+        #todo{
+            background-color: black;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-primary m-3" id = "bm"><a href="http://localhost:500/todos">Back to Main Menu</a></button>
+    <h1 class = "text-center mt-3">Enter todo you want to add</h1>
+    <form action="/todos" method="post">
+        <div id = "center">
+            <textarea name="text" id="todo" rows = "6" cols = "30"></textarea>
+            <br>
+            <button class="btn btn-success">Submit</button>
+        </div>
+    </form>
+    <%- include('partials/footer') %>
+</body>
+</html>

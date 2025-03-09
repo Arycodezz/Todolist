@@ -1,0 +1,47 @@
+<%- include('partials/head') %>
+    <title>Todolist</title>
+    <style>
+        #green {
+            margin-left: 500px;
+        }
+
+        .btn-group {
+            margin-bottom: 300px;
+        }
+
+        #Creates {
+            text-decoration: none;
+            color: black;
+        }
+
+        #redbtn {
+            margin-left: 0px;
+            display: inline;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1 class="text-center mt-3">Your own To-Do List</h1>
+        <button type="submit" class="btn btn-success" id = "green"><a href="http://localhost:500/todos/new" id="Creates">Create a
+                todo</a></button>
+        <section class="btn-group"></section>
+
+        <ul>
+            <% for(let a of arr){ %>
+                <li>
+                    <%= a.text %>
+                </li>
+                <a href="/todos/<%= a.id %>/edit">Update</a>
+                <form action="/todos/<%= a.id %>?_method=DELETE" method="post">
+                    <button type = "submit" class = "btn btn-danger" id = "redbtn">Delete</button>
+                </form>
+                <% } %>
+        </ul>
+
+
+        <%- include('partials/footer') %>
+
+    </body>
+
+    </html>
